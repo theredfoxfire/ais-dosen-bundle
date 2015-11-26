@@ -289,4 +289,25 @@ class DosenController extends FOSRestController
 
         return $dosen;
     }
+    
+    public function postUpdateDosenAction(Request $request, $id)
+    {
+		try {
+            $dosen = $this->container->get('ais_dosen.dosen.handler')->patch(
+                $this->getOr404($id),
+                $request->request->all()
+            );
+
+            $routeOptions = array(
+                'id' => $dosen->getId(),
+                '_format' => $request->get('_format')
+            );
+
+            return $this->routeRedirectView('api_1_get_dosen', $routeOptions, Codes::HTTP_NO_CONTENT);
+
+        } catch (InvalidFormException $exception) {
+
+            return $exception->getForm();
+        }
+	}
 }
