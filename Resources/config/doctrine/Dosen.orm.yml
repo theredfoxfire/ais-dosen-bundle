@@ -1,6 +1,7 @@
 Ais\DosenBundle\Entity\Dosen:
  type: entity
  table: dosen
+ repositoryClass: Ais\DosenBundle\Repository\DosenRepository
  id:
   id: 
    type: integer
