@@ -1,5 +1,5 @@
 {
-    "name" : "Ais/DosenBundle",
+    "name" : "ais/dosenbundle",
     "description" : "A bundle filled with Dosen",
     "type" : "symfony-bundle",
     "authors" : [{
